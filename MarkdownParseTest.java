@@ -27,13 +27,12 @@ public class MarkdownParseTest
 		assertEquals("[https://something.com, some-page.html]", MarkdownParse.getLinks(contents).toString());
 	}
 
-/*	@Test
+	@Test
 	public void testGetLinksFile3() throws IOException
 	{
 		Path fileName = Path.of("testFile3.md");
 		String contents = Files.readString(fileName);
 		
-		assertEquals("[https::look parentheses([]", MarkdownParse.getLinks(contents).toString());
+		assertEquals("[https::look parentheses(]", MarkdownParse.getLinks(contents).toString());
 	}
-*/
 }
