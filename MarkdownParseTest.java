@@ -48,7 +48,7 @@ import java.util.List;
 public class MarkdownParseTest {
 
 	@Test
-	public void testSnippet1NYoung() throws IOException
+	public void testGetLinkSnippet1() throws IOException
 	{
 		String contents= Files.readString(Path.of("./snippet1.md"));
 		List<String> expect = List.of("`google.com", "google.com", "ucsd.edu");
@@ -56,15 +56,7 @@ public class MarkdownParseTest {
 	}
 
 	@Test
-	public void testSnippet1ILiao() throws IOException
-	{
-		String contents= Files.readString(Path.of("./snippet1.md"));
-		List<String> expect = List.of("`google.com", "google.com", "ucsd.edu");
-		assertEquals(MarkdownParse.getLinks(contents), expect);
-	}
-
-	@Test
-	public void testSnippet2NYoung() throws IOException
+	public void testGetLinkSnippet2() throws IOException
 	{
 		String contents= Files.readString(Path.of("./snippet2.md"));
 		List<String> expect = List.of("a.com", "a.com(())", "example.com");
@@ -72,28 +64,13 @@ public class MarkdownParseTest {
 	}
 
 	@Test
-	public void testSnippet2ILiao() throws IOException
-	{
-		String contents= Files.readString(Path.of("./snippet2.md"));
-		List<String> expect = List.of("a.com", "a.com(())", "example.com");
-		assertEquals(MarkdownParse.getLinks(contents), expect);
-	}
-
-	@Test
-	public void testSnippet3NYoung() throws IOException
+	public void testGetLinkSnippet3() throws IOException
 	{
 		String contents= Files.readString(Path.of("./snippet3.md"));
 		List<String> expect = List.of("https://ucsd-cse15l-w22.github.io/");
 		assertEquals(MarkdownParse.getLinks(contents), expect);
 	}
 
-	@Test
-	public void testSnippet3ILiao() throws IOException
-	{
-		String contents= Files.readString(Path.of("./snippet3.md"));
-		List<String> expect = List.of("https://ucsd-cse15l-w22.github.io/");
-		assertEquals(MarkdownParse.getLinks(contents), expect);
-	}
 //	@Test
 //	public void testFile1() throws IOException {
 //		String contents= Files.readString(Path.of("./test-file.md"));
