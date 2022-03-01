@@ -52,9 +52,9 @@ public class MarkdownParseTest {
 	{
 		String contents= Files.readString(Path.of("./snippet1.md"));
 		List<String> expect = List.of("`google.com", "google.com", "ucsd.edu");
-		assertEquals(MarkdownParse.getLinks(contents), expect);
+		assertEquals(expect, MarkdownParse.getLinks(contents));
 	}
-
+/*
 	@Test
 	public void testGetLinkSnippet2() throws IOException
 	{
@@ -70,7 +70,7 @@ public class MarkdownParseTest {
 		List<String> expect = List.of("https://ucsd-cse15l-w22.github.io/");
 		assertEquals(MarkdownParse.getLinks(contents), expect);
 	}
-
+*/
 //	@Test
 //	public void testFile1() throws IOException {
 //		String contents= Files.readString(Path.of("./test-file.md"));
